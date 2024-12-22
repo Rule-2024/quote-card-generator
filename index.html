@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金句卡片生成器</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部标题 -->
+        <header>
+            <h1>金句卡片生成器</h1>
+            <p class="subtitle">将你的想法转化为精美的分享图片</p>
+        </header>
+
+        <!-- 主要内容区 -->
+        <main>
+            <!-- 输入区域 -->
+            <div class="input-section">
+                <textarea 
+                    id="quoteInput" 
+                    placeholder="在这里输入你想说的话..."
+                    maxlength="100"
+                ></textarea>
+            </div>
+
+            <!-- 风格选择区域 -->
+            <div class="style-selector">
+                <div class="style-title">选择卡片风格</div>
+                <div class="style-options">
+                    <div class="style-option" onclick="switchStyle('light')" data-style="light">
+                        <div class="style-preview light"></div>
+                        <div class="style-name">光影艺术</div>
+                    </div>
+                    <div class="style-option" onclick="switchStyle('ink')" data-style="ink">
+                        <div class="style-preview ink"></div>
+                        <div class="style-name">禅意水墨</div>
+                    </div>
+                    <div class="style-option" onclick="switchStyle('simple')" data-style="simple">
+                        <div class="style-preview simple"></div>
+                        <div class="style-name">现代简约</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 预览区域 -->
+            <div class="preview-section">
+                <canvas id="previewCanvas"></canvas>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="actions">
+                <button id="generateBtn">生成卡片</button>
+                <button id="downloadBtn">下载图片</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
